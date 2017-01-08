@@ -1,12 +1,13 @@
-import React    from 'react'
-import ReactDOM from 'react-dom'
+import React        from 'react'
+import ReactDOM     from 'react-dom'
+import { Provider } from 'react-redux'
+import routes       from '$config/routes'
+import { Router, hashHistory } from 'react-router/es6'
+// import { createStore, applyMiddleware, compose, combineReducers } from 'redux'
 
-var Test = React.createClass({
-  render : function () {
-    return (
-      <div>{'Tesing this stuff'}</div>
-    )
-  }
-})
+/*const store = createStore(combineReducers(reducers), compose(
+  applyMiddleware(thunk),
+  window.devToolsExtension ? window.devToolsExtension() : (func) => func
+))*/
 
-ReactDOM.render(<Test />, document.getElementById('root'))
+ReactDOM.render(<Router history={hashHistory} routes={routes()} />, document.getElementById('root'))

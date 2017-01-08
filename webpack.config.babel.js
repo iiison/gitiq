@@ -3,12 +3,15 @@ import webpack            from 'webpack'
 import HtmlWebpackPlugin  from 'html-webpack-plugin'
 import webpackLoadPlugins from 'webpack-load-plugins'
 
-const LAUNCH_COMMAND  = process.env.npm_lifecycle_event
-const isProd          = LAUNCH_COMMAND === 'production'
+const LAUNCH_COMMAND = process.env.npm_lifecycle_event
+const isProd         = LAUNCH_COMMAND === 'production'
 
-const PATHS           = {
+const PATHS = {
   app        : path.join(__dirname, 'app'),
-  build      : path.join(__dirname, 'build')
+  build      : path.join(__dirname, 'build'),
+  config     : path.join(__dirname, 'app/javascripts/config'),
+  containers : path.join(__dirname, 'app/javascripts/containers'),
+  components : path.join(__dirname, 'app/javascripts/components')
 }
 
 
@@ -80,15 +83,17 @@ const base = {
     modules: [path.resolve('./app'), 'node_modules'],
     extensions: ['.js', '.jsx'],
     alias: {
-      /*'$styles'     : PATHS.scss,
+      /*
+      '$styles'     : PATHS.scss,
       '$utils'      : PATHS.utils,
       '$store'      : PATHS.store,
-      '$config'     : PATHS.config,
       '$redux'      : PATHS.redux,
+      '$api'        : PATHS.api,
+      '$formatters' : `${PATHS.utils}/formatters`
+      */
       '$containers' : PATHS.containers,
       '$components' : PATHS.components,
-      '$api'        : PATHS.api,
-      '$formatters' : `${PATHS.utils}/formatters`*/
+      '$config'     : PATHS.config
     }
   },
   target : 'web'
