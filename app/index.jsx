@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom'
 var Test = React.createClass({
   render : function () {
     return (
-      <div>{'Tesing the test'}</div>
+      <div>{'Tesing this Shit'}</div>
     )
   }
 })
