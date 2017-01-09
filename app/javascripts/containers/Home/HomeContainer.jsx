@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import Home from '$components/Home/Home'
 
 /**
  * Home Page container, loads at `/` route.
@@ -11,7 +12,7 @@ class HomeContainer extends Component {
    */
   render() {
     return (
-      <div>{'Home page container'}</div>
+      <Home />
     )
   }
 }

@@ -11,7 +11,8 @@ const PATHS = {
   build      : path.join(__dirname, 'build'),
   config     : path.join(__dirname, 'app/javascripts/config'),
   containers : path.join(__dirname, 'app/javascripts/containers'),
-  components : path.join(__dirname, 'app/javascripts/components')
+  components : path.join(__dirname, 'app/javascripts/components'),
+  redux      : path.join(__dirname, 'app/javascripts/redux/modules'),
 }
 
 
@@ -87,13 +88,13 @@ const base = {
       '$styles'     : PATHS.scss,
       '$utils'      : PATHS.utils,
       '$store'      : PATHS.store,
-      '$redux'      : PATHS.redux,
       '$api'        : PATHS.api,
       '$formatters' : `${PATHS.utils}/formatters`
       */
-      '$containers' : PATHS.containers,
       '$components' : PATHS.components,
-      '$config'     : PATHS.config
+      '$containers' : PATHS.containers,
+      '$config'     : PATHS.config,
+      '$redux'      : PATHS.redux,
     }
   },
   target : 'web'
