@@ -52,13 +52,13 @@ const base = {
   },
   module: {
     loaders : [
-     /* {
+      {
         enforce : 'pre',
         test    : /\.jsx$|\.js$/,
         loader  : 'eslint-loader',
         include : PATHS.app,
         exclude : /bundle\.js/
-      },*/
+      },
       {
         test    : /\.jsx$|\.js$/,
         exclude : /node_modules/,

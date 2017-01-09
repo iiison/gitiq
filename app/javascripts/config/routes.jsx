@@ -1,7 +1,4 @@
-import React from 'react'
-import { Router, hashHistory } from 'react-router/es6'
-
-import MainContainer from '$containers/Main/MainContainer';
+import MainContainer from '$containers/Main/MainContainer'
 
 const loadRoute = (callback) => (module) => callback(null, module.default)
 const errorLoading = () => {
@@ -10,7 +7,7 @@ const errorLoading = () => {
 
 const routes = () => {
   const rootRoute = {
-    component : MainContainer,
+    component   : MainContainer,
     childRoutes : [
       {
         path : '/',
