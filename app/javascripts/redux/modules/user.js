@@ -1,14 +1,29 @@
+import { getRepos } from '$api/user'
+
 /**
  * Fetch User action creator
  * @return {Object} Action for Fetching user
  */
-export function fetchingUser() {
+function fetchingUser() {
   return {
     type : 'FETCHING_USER'
   }
 }
 
+// Async action creators
 
+/**
+ * Fetch User Repos(if any) from Github API
+ * @param  {String} username  username passed by the user
+ * @return {Promise}          [description]
+ */
+export function fetchUserDetails(username) {
+  return (dispatch) => {
+    dispatch(fetchingUser())
+
+    return getRepos(username)
+  }
+}
 const initialUserState = {
   error      : '',
   isFetching : false

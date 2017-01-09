@@ -5,16 +5,19 @@ import webpackLoadPlugins from 'webpack-load-plugins'
 
 const LAUNCH_COMMAND = process.env.npm_lifecycle_event
 const isProd         = LAUNCH_COMMAND === 'production'
+const target         = 'https://api.github.com'
 
 const PATHS = {
+  api        : path.join(__dirname, 'app/javascripts/api'),
   app        : path.join(__dirname, 'app'),
   build      : path.join(__dirname, 'build'),
   config     : path.join(__dirname, 'app/javascripts/config'),
   containers : path.join(__dirname, 'app/javascripts/containers'),
   components : path.join(__dirname, 'app/javascripts/components'),
   redux      : path.join(__dirname, 'app/javascripts/redux/modules'),
+  store      : path.join(__dirname, 'app/javascripts/store'),
+  utils      : path.join(__dirname, 'app/javascripts/utils')
 }
-
 
 // Plugins Config Starts
 const prodPlugin = new webpack.DefinePlugin({
@@ -65,15 +68,16 @@ const base = {
         exclude : /node_modules/,
         loader  : 'babel-loader'
       },
+      {
+        test : /\.json$/,
+        loader: 'json-loader'
+      }
       /*{
         test   : /\.(scss|css)$/,
         // loader : ExtractTextPlugin.extract(extractTextPluginOptions)
         loader : ExtractTextPlugin.extract('css-loader?localIdentName=[name]__[local]___[hash : base64 : 5]&modules&importLoaders=1!postcss-loader!sass-loader?outputStyle=expanded')
       },
-      {
-        test : /\.json$/,
-        loader: 'json-loader'
-      }*/
+      */
     ]
   },
   // stats :
@@ -86,15 +90,16 @@ const base = {
     alias: {
       /*
       '$styles'     : PATHS.scss,
-      '$utils'      : PATHS.utils,
-      '$store'      : PATHS.store,
-      '$api'        : PATHS.api,
       '$formatters' : `${PATHS.utils}/formatters`
       */
+
+      '$api'        : PATHS.api,
       '$components' : PATHS.components,
       '$containers' : PATHS.containers,
       '$config'     : PATHS.config,
       '$redux'      : PATHS.redux,
+      '$store'      : PATHS.store,
+      '$utils'      : PATHS.utils
     }
   },
   target : 'web'
@@ -117,6 +122,12 @@ const devConf = {
     contentBase : PATHS.build,
     hot         : true,
     inline      : true,
+    /*proxy       : {
+      '*' : {
+        target : target,
+        secure : false
+      }
+    }*/
   },
   plugins: commonPlugins.concat([new webpack.HotModuleReplacementPlugin()])
 }

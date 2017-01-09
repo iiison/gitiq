@@ -20,7 +20,6 @@ const routes = () => {
     ]
   }
 
-  // return <Router history={hashHistory} routes={rootRoute} />
   return rootRoute
 }
 

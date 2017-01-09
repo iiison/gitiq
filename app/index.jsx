@@ -12,11 +12,9 @@ const store = createStore(combineReducers(reducers), compose(
   window.devToolsExtension ? window.devToolsExtension() : (func) => func
 ))
 
-
 ReactDOM.render(
   <Provider store={store}>
     <Router history={hashHistory} routes={routes()} />
   </Provider>,
   document.getElementById('root')
 )
-// ReactDOM.render(<Router history={hashHistory} routes={routes()} />, document.getElementById('root'))
