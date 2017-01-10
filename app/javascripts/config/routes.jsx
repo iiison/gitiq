@@ -16,6 +16,22 @@ const routes = () => {
             .then(loadRoute(callback))
             .catch(errorLoading)
         }
+      },
+      {
+        path : ':user',
+        getComponent(location, callback) {
+          System.import('javascripts/containers/Repos/ReposContainer')
+            .then(loadRoute(callback))
+            .catch(errorLoading)
+        }
+      },
+      {
+        path : ':user/:repo',
+        getComponent(location, callback) {
+          System.import('javascripts/containers/Readme/ReadmeContainer')
+            .then(loadRoute(callback))
+            .catch(errorLoading)
+        }
       }
     ]
   }

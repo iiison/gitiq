@@ -2,16 +2,15 @@
   user : {
     isFetching,
     error,
-    name,
-    userName,
-    repos : ['id', 'id']
+    userName
   },
   repos : {
-    [id] : {
-      details,
-    },
-    [id] : {
-      details
+    [userName] : {
+      [repo] : {
+        isFetching,
+        error,
+        readme
+      }
     }
   }
 }
