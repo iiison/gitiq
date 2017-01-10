@@ -1,6 +1,6 @@
 # Project: gitiq
-    Lists Github user's Repo and Readme files
---
+Lists Github user's Repo and Readme files
+
 
 ## How to setup the project
 
@@ -22,13 +22,13 @@
     
     you will see npm version if everyhing is right.
     
-- ####Clone Repo
+- #### Clone Repo
     ```sh
     cd ~/Documents
     git clone https://github.com/iiison/gitiq.git
     cd gitiq
     ```
-- ####Installing Dependencies
+- #### Installing Dependencies
     ```sh
     npm i
     ```
@@ -41,11 +41,11 @@ First Time setup is completed 👍
 
 ## Running Server
 
-- ####Running Dev server:
-    ```sh
-    npm run start
-    ```
-- ####Running Production Bild:
-    ```sh
-    npm run production
-    ```
+    - ####Running Dev server:
+        ```sh
+        npm run start
+     ```
+    - ####Running Production Bild:
+        ```sh
+        npm run production
+        ```
