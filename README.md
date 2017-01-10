@@ -28,7 +28,7 @@
     git clone https://github.com/iiison/gitiq.git
     cd gitiq
     ```
-- ####Install Dependencies
+- ####Installing Dependencies
     ```sh
     npm i
     ```
