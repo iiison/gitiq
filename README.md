@@ -42,11 +42,13 @@ First Time setup is completed 👍
 
 ## Running Server
 
-    - ####Running Dev server:
-        ```sh
-        npm run start
-     ```
-    - ####Running Production Bild:
-        ```sh
-        npm run production
-        ```
+
+- ####Running Dev server:
+    ```sh
+    npm run start
+    ```
+     
+- ####Running Production Bild:
+    ```sh
+    npm run production
+    ```
