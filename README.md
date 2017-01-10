@@ -22,13 +22,14 @@ Lists Github user's Repo and Readme files
     
     you will see npm version if everyhing is right.
     
-- #### Clone Repo
+- ####Clone Repo
     ```sh
     cd ~/Documents
     git clone https://github.com/iiison/gitiq.git
     cd gitiq
     ```
-- #### Installing Dependencies
+
+- ####Installing Dependencies
     ```sh
     npm i
     ```
