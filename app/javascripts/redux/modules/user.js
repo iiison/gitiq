@@ -38,7 +38,7 @@ function fetchingUserError() {
 /**
  * Fetch User Repos(if any) from Github API
  * @param  {String} username  username passed by the user
- * @return {Promise}          [description]
+ * @return {Promise}          Promise
  */
 export function fetchUserDetails(username) {
   return (dispatch) => {

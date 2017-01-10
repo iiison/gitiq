@@ -3,22 +3,30 @@ import ReactMarkdown           from 'react-markdown'
 import { connect }             from 'react-redux'
 import { bindActionCreators }  from 'redux'
 import * as repoActionCreators from '$redux/repos'
+import Nav                     from '$components/Nav/Nav'
 
+/**
+ * Readme Container, renders read me of repo.
+ */
 class ReadmeContainer extends Component {
+  /**
+   * React Lifecycle Event: Renders Repos Page View(/:user/:repo)
+   * @return {JSX}  Calls Repos Component to Render the page
+   */
   render() {
     const props = this.props
     const params = props.params
 
     if (props.repos[params.user] && props.repos[params.user][params.repo].readme) {
-      console.log('%c <><><><><><><><><><><><><><><>', 'color: green, font-weight: bold')
-      console.log(props.repos[params.user][params.repo].readme)
-      console.log('%c <><><><><><><><><><><><><><><>', 'color: green, font-weight: bold')
       return (
-        <div><ReactMarkdown source={props.repos[params.user][params.repo].readme} /></div>
+        <div>
+          <Nav header={params.repo} />
+          <ReactMarkdown source={props.repos[params.user][params.repo].readme} />
+        </div>
       )
     }
 
-    return( <h1>{'Loading...'}</h1>)
+    return <h1>{'Loading...'}</h1>
   }
 
   /**

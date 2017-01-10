@@ -1,5 +1,6 @@
 import { fetchReadMe }  from '$api/readme'
 import { formatRepos }  from '$utils/formatters'
+
 /**
  * Update different User's repos
  * @param  {Object} repoData  List of repos and user name
@@ -54,14 +55,23 @@ const initialState = {
 }
 
 // Async Action Creators
+
+/**
+ * Thunk: Fetches readme URL and readme file.
+ * @param  {String} userName  Github user name
+ * @param  {String} repoName  repo name
+ * @param  {Object} userRepos user's repo in state currently
+ * @return {Promise}          Promise
+ */
 export function FetchRepoReadMe(userName, repoName, userRepos) {
   return (dispatch) => {
     if (!userRepos) {
-      const repos = formatRepos([{name : repoName}])
+      const dummyRepos = formatRepos([{ name : repoName }])
 
-      repos.user = userName
-      dispatch(updateRepos(repos))
+      dummyRepos.user = userName
+      dispatch(updateRepos(dummyRepos))
     }
+
     return fetchReadMe(repoName, userName)
       .then((result) => {
         dispatch(fetchRepoReadMeSuccess(result.data, userName, repoName))
