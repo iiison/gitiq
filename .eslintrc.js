@@ -217,7 +217,7 @@ const baseRules = {
   "prefer-arrow-callback": 2,
   "prefer-template": 2,
   "template-curly-spacing": 2,
-  "no-confusing-arrow": [1, {"allowParens": false}],
+  // "no-confusing-arrow": [1, {"allowParens": false}],
      /////////////////
     // React Rules //
    /////////////////

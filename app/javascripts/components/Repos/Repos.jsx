@@ -1,6 +1,7 @@
-import React    from 'react'
-import { Link } from 'react-router'
-import Nav from '../Nav/Nav'
+import React       from 'react'
+import { Link }    from 'react-router'
+import Nav         from '../Nav/Nav'
+import * as styles from './styles.scss'
 
 const RepoLinks = (repos, userName) => (
   repos.map((repo) => (
@@ -15,7 +16,7 @@ const Repos = ({ repos, userName, error }) => (
     ? (
       <div>
         <Nav header={`${userName}'s Repos`} />
-        <ul>
+        <ul className={styles.repos}>
           {RepoLinks(repos, userName)}
         </ul>
       </div>

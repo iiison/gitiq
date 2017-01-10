@@ -16,7 +16,7 @@ class ReposContainer extends Component {
     const props = this.props
 
     if (props.isFetching) {
-      return (<h1>{'Loading...'}</h1>)
+      return (<h1 className={'loading'}>{'Loading...'}</h1>)
     }
 
     return (

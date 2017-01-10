@@ -1,0 +1,43 @@
+@import "../../../styles/scss/base/_variables";
+
+.markdown{
+  width: 90%;
+  margin: 0 auto;
+  font-size: 16px;
+
+  h1,h2,h3,h4,h5{
+    display: inline-block;
+    width: 100%;
+    font-weight: $font-bold;
+  }
+
+  h1{
+    font-size: 22px;
+    padding-bottom: 10px;
+  }
+
+  h2{
+    font-size: 18px;
+    padding-bottom: 10px;
+  }
+
+  h4{
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+
+  li{
+    width: 100%;
+    list-style: disc;
+    padding-left: 20px;
+  }
+
+  *{
+    font-size: inherit;
+  }
+
+  pre{
+    padding: 20px;
+    background-color: $faded;
+  }
+}

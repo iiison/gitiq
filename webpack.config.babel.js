@@ -2,6 +2,7 @@ import path               from 'path'
 import webpack            from 'webpack'
 import HtmlWebpackPlugin  from 'html-webpack-plugin'
 import webpackLoadPlugins from 'webpack-load-plugins'
+import ExtractTextPlugin  from 'extract-text-webpack-plugin'
 
 const LAUNCH_COMMAND = process.env.npm_lifecycle_event
 const isProd         = LAUNCH_COMMAND === 'production'
@@ -38,6 +39,10 @@ const HTMLWebpackPluginConfig = new HtmlWebpackPlugin({
   inject   : 'body'
 })
 
+const extractTextPluginConfig  = new ExtractTextPlugin({
+  allChunks : true,
+  filename  : "style.css"
+})
 // Plugins Config Ends
 
 
@@ -71,13 +76,11 @@ const base = {
       {
         test : /\.json$/,
         loader: 'json-loader'
-      }
-      /*{
+      },
+      {
         test   : /\.(scss|css)$/,
-        // loader : ExtractTextPlugin.extract(extractTextPluginOptions)
         loader : ExtractTextPlugin.extract('css-loader?localIdentName=[name]__[local]___[hash : base64 : 5]&modules&importLoaders=1!postcss-loader!sass-loader?outputStyle=expanded')
       },
-      */
     ]
   },
   // stats :
@@ -105,7 +108,7 @@ const base = {
   target : 'web'
 }
 
-const commonPlugins = [HTMLWebpackPluginConfig, commonsVendorChunk]
+const commonPlugins = [HTMLWebpackPluginConfig, commonsVendorChunk, extractTextPluginConfig]
 
 const prodConf = {
   entry : {

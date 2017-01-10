@@ -24,4 +24,9 @@ export function fetchReadMe(repoName, userName) {
     .then((response) => get({
       url : response.data.download_url
     }))
+    .catch((error) => {
+      return {
+        data : 'File Not Found'
+      }
+    })
 }

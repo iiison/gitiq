@@ -1,8 +1,10 @@
-import React from 'react'
+import React          from 'react'
+import * as styles    from './styles.scss'
 
 const Home = ({ onFetch, onUserNameChange, userName, isFetching, error }) => (
-  <div>
-    <form action='#'>
+  <div className={`${styles.cont} center`}>
+    <h1 className='head'>{'Enter a github user name'}</h1>
+    <form action='#' className={styles.form}>
       <input
         placeholder='Enter Github username'
         type='text'

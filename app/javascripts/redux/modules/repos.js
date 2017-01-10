@@ -73,9 +73,8 @@ export function FetchRepoReadMe(userName, repoName, userRepos) {
     }
 
     return fetchReadMe(repoName, userName)
-      .then((result) => {
-        dispatch(fetchRepoReadMeSuccess(result.data, userName, repoName))
-      })
+      .then((result) => dispatch(fetchRepoReadMeSuccess(result.data, userName, repoName)))
+      .catch((error) => dispatch(fetchRepoReadMeError()))
   }
 }
 

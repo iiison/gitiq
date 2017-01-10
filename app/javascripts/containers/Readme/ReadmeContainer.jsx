@@ -4,6 +4,7 @@ import { connect }             from 'react-redux'
 import { bindActionCreators }  from 'redux'
 import * as repoActionCreators from '$redux/repos'
 import Nav                     from '$components/Nav/Nav'
+import * as styles             from './styles.scss'
 
 /**
  * Readme Container, renders read me of repo.
@@ -21,12 +22,14 @@ class ReadmeContainer extends Component {
       return (
         <div>
           <Nav header={params.repo} />
-          <ReactMarkdown source={props.repos[params.user][params.repo].readme} />
+          <div className={styles.markdown}>
+            <ReactMarkdown source={props.repos[params.user][params.repo].readme} />
+          </div>
         </div>
       )
     }
 
-    return <h1>{'Loading...'}</h1>
+    return <h1 className={'loading'}>{'Loading...'}</h1>
   }
 
   /**
@@ -38,8 +41,7 @@ class ReadmeContainer extends Component {
     const params = props.params
 
     this.props.FetchRepoReadMe(params.user, params.repo, props.repos[params.user])
-      .then((data) => {
-      })
+
     if (props.isFetching) {
       props.fetchUserDetails(props.params.user)
     }

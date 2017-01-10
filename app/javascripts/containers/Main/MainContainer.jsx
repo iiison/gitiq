@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import * as styles          from './styles.scss'
 
 /**
  * Main Class, will pass on all the data from here

@@ -1,0 +1,21 @@
+@import "../../../styles/scss/base/_variables";
+
+.repos{
+  width: 90%;
+  margin: 0 auto;
+
+  li{
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  a{
+    font-size: 16px;
+    border-bottom: 1px solid transparent;
+    transition: all 0.4s ease-in-out;
+
+    &:hover{
+      border-bottom-color: $theme;
+    }
+  }
+}
